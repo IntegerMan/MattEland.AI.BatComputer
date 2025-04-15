@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "MattEland.AI.BatComputer",
+  "display": "standalone",
+  "name": "MattEland.AI.BatComputer",
+  "short_name": "MattEland.AI.BatComputer",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}
