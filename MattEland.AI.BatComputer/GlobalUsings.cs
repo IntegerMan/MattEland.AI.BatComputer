@@ -11,4 +11,5 @@ global using MattEland.AI.BatComputer.DataContracts.Serialization;
 global using MattEland.AI.BatComputer.Services.Caching;
 global using MattEland.AI.BatComputer.Services.Endpoints;
 global using ApplicationExecutionState = Windows.ApplicationModel.Activation.ApplicationExecutionState;
+
 [assembly: Uno.Extensions.Reactive.Config.BindableGenerationTool(3)]

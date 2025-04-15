@@ -15,7 +15,8 @@ public sealed class WeatherCache : IWeatherCache
         _logger = logger;
     }
 
-    private bool IsConnected => NetworkInformation.GetInternetConnectionProfile().GetNetworkConnectivityLevel() == NetworkConnectivityLevel.InternetAccess;
+    private bool IsConnected => NetworkInformation.GetInternetConnectionProfile().GetNetworkConnectivityLevel() ==
+                                NetworkConnectivityLevel.InternetAccess;
 
     public async ValueTask<IImmutableList<WeatherForecast>> GetForecast(CancellationToken token)
     {

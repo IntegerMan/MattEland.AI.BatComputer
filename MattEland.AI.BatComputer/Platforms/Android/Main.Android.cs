@@ -32,7 +32,7 @@ public class Application : Microsoft.UI.Xaml.NativeApplication
     {
         // Create global configuration and initialize ImageLoader with this config
         ImageLoaderConfiguration config = new ImageLoaderConfiguration
-            .Builder(Context)
+                .Builder(Context)
             .Build();
 
         ImageLoader.Instance.Init(config);
@@ -40,4 +40,3 @@ public class Application : Microsoft.UI.Xaml.NativeApplication
         ImageSource.DefaultImageLoader = ImageLoader.Instance.LoadImageAsync;
     }
 }
-

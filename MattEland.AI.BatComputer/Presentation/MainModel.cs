@@ -24,5 +24,4 @@ public partial record MainModel
         var name = await Name;
         await _navigator.NavigateViewModelAsync<SecondModel>(this, data: new Entity(name!));
     }
-
 }
