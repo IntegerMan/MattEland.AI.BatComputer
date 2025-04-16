@@ -47,5 +47,8 @@
             ThemeService;
         </UnoFeatures>
     </PropertyGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\MattEland.AI.BatLogic\MattEland.AI.BatLogic.csproj" />
+    </ItemGroup>
 
 </Project>
