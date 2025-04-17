@@ -1,5 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
+﻿using MattEland.AI.BatCli.Helpers;
 using MattEland.AI.BatLogic;
 using Microsoft.Extensions.AI;
 using Spectre.Console;
@@ -7,10 +6,7 @@ using Spectre.Console;
 IAnsiConsole console = AnsiConsole.Console;
 
 // Figlet logo
-console.Write(new FigletText("BatCLI"));
-console.MarkupLine("[bold green]By Matt Eland[/]");
-console.WriteLine();
-
+console.DisplayLogo();
 IChatClient chatClient = new EchoChatClient();
 
 // Get a message from the user
