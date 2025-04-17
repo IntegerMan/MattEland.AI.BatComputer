@@ -1,22 +1,21 @@
-﻿using MattEland.AI.BatCli.Helpers;
+﻿using MattEland.AI.BatCli.Commands;
+using MattEland.AI.BatCli.Helpers;
+using MattEland.AI.BatCli.Infrastructure;
 using MattEland.AI.BatLogic;
 using Microsoft.Extensions.AI;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Spectre.Console;
+using Spectre.Console.Cli;
 
 IAnsiConsole console = AnsiConsole.Console;
-
-// Figlet logo
 console.DisplayLogo();
-IChatClient chatClient = new EchoChatClient();
 
-// Get a message from the user
-console.MarkupLine("[yellow]Enter a message to send to the echo chat client:[/]");
-string userInput = console.Ask<string>($"[green]{ChatRole.User}:[/]");
+ServiceCollection services = new();
+services.AddSingleton<IChatClient, EchoChatClient>();
+services.AddSingleton<IAnsiConsole>(_ => AnsiConsole.Console);
 
-ChatMessage message = new(ChatRole.User, userInput);
-ChatResponse response = await chatClient.GetResponseAsync(message);
+AlfredTypeRegistrar registrar = new(services);
 
-foreach (ChatMessage responseMessage in response.Messages)
-{
-    console.MarkupLine($"[cyan]{responseMessage.Role}:[/] {responseMessage.Text}");
-}
+CommandApp<EchoCommand> app = new CommandApp<EchoCommand>(registrar);
+app.Run(args);
