@@ -19,8 +19,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Remove="Doom.flf" />
-      <Content Include="Doom.flf">
+      <Content Update="Doom.flf">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
     </ItemGroup>
